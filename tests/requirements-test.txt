@@ -3,4 +3,6 @@ pytest==7.3.1
 PyYAML==6.0.1
 tenacity==8.2.3
 charmed-kubeflow-chisme>=0.4
-git+https://github.com/canonical/k8s-test-harness.git@main
+# HACK(aznashwan): revert to upstream Canonical repo when this merges:
+# https://github.com/canonical/k8s-test-harness/pull/30
+git+https://github.com/aznashwan/k8s-test-harness.git@main
