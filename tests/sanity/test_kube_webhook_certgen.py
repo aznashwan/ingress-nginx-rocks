@@ -21,7 +21,7 @@ IMAGE_VERSIONS = ["v1.4.1"]
 
 @pytest.mark.abort_on_fail
 @pytest.mark.parametrize("image_version", IMAGE_VERSIONS)
-def test_compare_rock_files_to_original(image_version):
+def test_check_rock_image_contents(image_version):
     """Test ROCK contains same fileset as original image."""
 
     architecture = platform_util.get_current_rockcraft_platform_architecture()
