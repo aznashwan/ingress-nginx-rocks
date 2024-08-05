@@ -81,7 +81,7 @@ parts:
       - DISTROLESS_BUSYBOX_DEBUG: 1
 
     override-build: |
-      set -eux
+      set -eux -o pipefail
 
       if [ "$DISTROLESS_BUSYBOX_DEBUG" -eq "1" ]; then
         mkdir -p "$CRAFT_PART_INSTALL/bin"
