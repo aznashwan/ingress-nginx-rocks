@@ -27,7 +27,7 @@ base: bare
 build-base: ubuntu@22.04
 platforms:
   amd64:
-  arm64:
+  # arm64:
 
 services:
   kube_webhook_certgen:
