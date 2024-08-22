@@ -814,6 +814,7 @@ parts:
       cp -rp /var/log/nginx $CRAFT_PART_INSTALL/var/log
       cp -rp /var/log/audit $CRAFT_PART_INSTALL/var/log
 
+      cp -rp /var/www $CRAFT_PART_INSTALL/var
       mkdir -p $CRAFT_PART_INSTALL/var/lib/nginx
 
     stage:
