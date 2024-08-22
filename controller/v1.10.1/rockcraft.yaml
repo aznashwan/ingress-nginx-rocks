@@ -773,6 +773,7 @@ parts:
         /opt/modsecurity/var/audit \
         /var/log/audit \
         /var/log/nginx \
+        /var/www \
         /tmp/nginx \
       );
 
@@ -824,6 +825,7 @@ parts:
       - var/log/nginx
       - var/log/audit
       - var/lib/nginx
+      - var/www
 
   build-go-binaries:
     after: ['build-nginx']

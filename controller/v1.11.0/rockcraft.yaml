@@ -773,6 +773,7 @@ parts:
         /opt/modsecurity/var/audit \
         /var/log/audit \
         /var/log/nginx \
+        /var/www \
         /tmp/nginx \
       );
       for dir in "${writeDirs[@]}"; do
@@ -821,6 +822,7 @@ parts:
       - var/log/nginx
       - var/log/audit
       - var/lib/nginx
+      - var/www
 
   build-go-binaries:
     after: ['build-nginx']
