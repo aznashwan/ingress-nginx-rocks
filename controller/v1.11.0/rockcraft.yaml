@@ -64,6 +64,12 @@ parts:
       - libyaml-cpp-dev
       - libprotobuf-dev
       - tzdata
+      # HACK(aznaswhan): debug caps:
+      - libcap2-bin
+      - telnet
+      - curl
+      - wget
+      - iputils-ping
 
     overlay-script: |
       set -eux -o pipefail
