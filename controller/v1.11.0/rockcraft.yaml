@@ -811,9 +811,10 @@ parts:
       mkdir -p $CRAFT_PART_INSTALL/opt
       cp -rp /opt/* $CRAFT_PART_INSTALL/opt
 
-      mkdir -p $CRAFT_PART_INSTALL/etc/nginx
+      mkdir -p $CRAFT_PART_INSTALL/etc
+      cp -rp /etc/nginx $CRAFT_PART_INSTALL/etc/nginx
       cp -rp $CRAFT_PART_SRC/rootfs/etc/nginx/* $CRAFT_PART_INSTALL/etc/nginx
-      cp -rp /etc/nginx/* $CRAFT_PART_INSTALL/etc/nginx
+      cp -rp /etc/ingress-controller $CRAFT_PART_INSTALL/etc/ingress-controller
 
       # Added files/directories that need creating:
       mkdir -p $CRAFT_PART_INSTALL/var/log
@@ -829,6 +830,7 @@ parts:
       - usr/lib/*
       - opt/*
       - etc/nginx/*
+      - etc/ingress-controller/*
       - var/log/nginx
       - var/log/audit
       - var/lib/nginx
