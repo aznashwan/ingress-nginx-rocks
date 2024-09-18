@@ -26,7 +26,10 @@ services:
     startup: enabled
     override: replace
 
-    command: /usr/bin/dumb-init -- [ /nginx-ingress-controller ]
+    command: /pebble-entrypoint.sh [ /nginx-ingress-controller ]
+
+    on-success: shutdown
+    on-failure: shutdown
 
 entrypoint-service: nginx
 
@@ -887,3 +890,7 @@ parts:
       cp /usr/bin/dumb-init $CRAFT_PART_INSTALL/usr/bin
       setcap    cap_net_bind_service=+ep $CRAFT_PART_INSTALL/usr/bin/dumb-init
       setcap -v cap_net_bind_service=+ep $CRAFT_PART_INSTALL/usr/bin/dumb-init
+
+      cp $CRAFT_PROJECT_DIR/pebble-entrypoint.sh $CRAFT_PART_INSTALL/pebble-entrypoint.sh
+      chmod +x $CRAFT_PART_INSTALL/pebble-entrypoint.sh
+
