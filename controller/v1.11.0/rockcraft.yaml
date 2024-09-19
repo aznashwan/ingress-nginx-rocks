@@ -829,6 +829,9 @@ parts:
       cp -rp /var/www $CRAFT_PART_INSTALL/var
       mkdir -p $CRAFT_PART_INSTALL/var/lib/nginx
 
+      mkdir -p $CRAFT_PART_INSTALL/tmp
+      cp -rp /tmp/nginx $CRAFT_PART_INSTALL/tmp
+
     stage:
       - usr/bin/*
       - usr/local/*
@@ -836,6 +839,7 @@ parts:
       - opt/*
       - etc/nginx/*
       - etc/ingress-controller/*
+      - tmp/nginx
       - var/log/nginx
       - var/log/audit
       - var/lib/nginx
