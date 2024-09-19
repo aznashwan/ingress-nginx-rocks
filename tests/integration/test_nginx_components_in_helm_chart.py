@@ -127,7 +127,7 @@ def test_nginx_ingress_chart_deployment(
     all_chart_value_overrides_args.extend(
         [
             "--set-json",
-            f"{controller_chart_section}.containerSecurityContext='{sec_ctxt_json}'"
+            f"{controller_chart_section}.containerSecurityContext={sec_ctxt_json}"
         ]
     )
 
